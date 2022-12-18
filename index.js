@@ -5,6 +5,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateHTML = require('./src/page-template.js');
 
+const DIST_DIR = path.resolve(__dirname, 'dist');
+const distPath = path.join(DIST_DIR, 'team.html');
+
 const teamMembers = [];
 const employeeIds = [];
 
@@ -232,10 +235,8 @@ function runApp () {
           });
     }
 
-    function buildTeam() {
-        fs.writeFile('team.html', generateHTML(teamMembers), (err) => {
-            err ? console.log(err) : console.log("Successfully generated HTML!");
-        })
+    function makeTeam() {
+        fs.writeFile(distPath, generateHTML(teamMembers), 'utf-8');
     }
 }
 
