@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: #25A1D3;
+    width: 100%;
+    padding: 60px;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+}
+
+.team-area {
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 5px;
+}
+
+.employee-card {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 6px;
+    box-shadow: 3px 3px 6px black;
+}
