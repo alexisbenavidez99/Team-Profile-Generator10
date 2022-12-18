@@ -1,8 +1,8 @@
-const Employee = require("./lib/Employee");
-const inquirer = require("inquirer");
-const engineer = require("./Engineer");
-const intern = require("./Intern");
-const manager = require("./Manager");
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const Manager = require('./lib/Manager');
+const inquirer = require('inquirer');
+const fs = require('fs');
 
 function runApp () {
     function addManager() {
