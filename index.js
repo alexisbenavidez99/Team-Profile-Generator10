@@ -3,6 +3,7 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const path = require('path');
 const generateHTML = require('./src/page-template.js');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
