@@ -4,6 +4,9 @@ const Manager = require('./lib/Manager');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+const teamMembers = [];
+const employeeIds = [];
+
 function runApp () {
     function addManager() {
         inquirer
@@ -54,9 +57,20 @@ function runApp () {
                 } else {
                     return "The employee's office number needs to be greater than 0."
                 }
-              }
-            }
+              },
+            },
           ])
+          .then((value) => {
+            const manager = new Manager(
+                value.managerName,
+                value.managerID,
+                value.managerEmail,
+                value.managerOfficeNum
+            );
+            teamMembers.push(manager);
+            employeeIds.push(value.managerID);
+            createTeam();
+          });
     }
 
     function createTeam() {
@@ -70,9 +84,21 @@ function runApp () {
                 "Engineer",
                 "Intern",
                 "I don't want to add anymore employees"
-              ]
-            }
+              ],
+            },
           ])
+          .then((userInput) => {
+            switch (userInput.employeeChoice) {
+                case "Engineer":
+                  addEngineer();
+                  break;
+                case "Intern":
+                  addIntern();
+                  break;
+                default:
+                  buildTeam();
+            }
+          });
     }
 
     function addEngineer() {
@@ -127,6 +153,17 @@ function runApp () {
               }
             }
           ])
+          .then((value) => {
+            const engineer = new Engineer(
+                value.engineerName,
+                value.engineerID,
+                value.engineerEmail,
+                value.engineerGithub
+            );
+            teamMembers.push(engineer);
+            employeeIds.push(value.enginerID);
+            createTeam();
+          });
     }
 
     function addIntern() {
@@ -146,7 +183,7 @@ function runApp () {
             },
             {
               type: "input",
-              name: "internId",
+              name: "internID",
               message: "Please enter your intern's ID.",
               validate: (value) => {
                 if (typeof value === number) {
@@ -181,5 +218,16 @@ function runApp () {
               }
             }
           ])
+          .then((value) => {
+            const intern = new Intern(
+                value.internName,
+                value.internID,
+                value.internEmail,
+                value.internSchool
+            );
+            teamMembers.push(intern);
+            employeeIds.push(value.internID);
+            createTeam();
+          });
     }
 }
