@@ -3,6 +3,7 @@ const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateHTML = require('./src/page-template.js');
 
 const teamMembers = [];
 const employeeIds = [];
@@ -230,4 +231,12 @@ function runApp () {
             createTeam();
           });
     }
+
+    function buildTeam() {
+        fs.writeFile('team.html', generateHTML(teamMembers), (err) => {
+            err ? console.log(err) : console.log("Successfully generated HTML!");
+        })
+    }
 }
+
+runApp();
