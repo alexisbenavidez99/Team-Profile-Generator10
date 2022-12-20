@@ -17,84 +17,37 @@
         <div class="container">
         <div class="row">
         <div class="team-area col-12 d-flex justify-content-center">
-        team => {
-
-    const generateManager = manager => {
-        return `
+        
         <div class="employee-card">
         <div class="card" style="width: 20rem;">
         <div class="card-body">
-          <h5 class="card-title">${manager.getName()}</h5>
-          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-mug-hot mr-2"></i> ${manager.getRole()}</h6>
+          <h5 class="card-title">hdhd</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-mug-hot mr-2"></i> Manager</h6>
             <div class="card" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">${manager.getId()}</li>
-              <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></a></li>
-              <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
+              <li class="list-group-item">1</li>
+              <li class="list-group-item">Email: <a href="mailto:jdjd">jdjd</a></a></li>
+              <li class="list-group-item">Office Number: 12</li>
             </ul>
             </div>
           </div>
         </div>
-      </div>`
-    };
-
-    const generateEngineer = engineer => {
-        return `
+      </div>
         <div class="employee-card">
         <div class="card" style="width: 20rem;">
         <div class="card-body">
-          <h5 class="card-title">${engineer.getName()}</h5>
-          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-glasses mr-2"></i> ${engineer.getRole()}</h6>
+          <h5 class="card-title">jdjdj</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-glasses mr-2"></i> Engineer</h6>
           <div class="card" style="width: 18rem;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${engineer.getId()}</li>
-              <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-              <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
+              <li class="list-group-item">ID: 2</li>
+              <li class="list-group-item">Email: <a href="mailto:jdjd">jdjd</a></li>
+              <li class="list-group-item">GitHub: <a href="https://github.com/kdkd" target="_blank">kdkd</a></li>
             </ul>
             </div>
           </div>
         </div>
-      </div>`
-    };
-
-    const generateIntern = intern => {
-        return `
-        <div class="employee-card">
-        <div class="card" style="width: 20rem;">
-        <div class="card-body">
-          <h5 class="card-title">${intern.getName()}</h5>
-          <h6 class="card-subtitle mb-2 text-muted"><i class="fas fa-user-graduate mr-2"></i> ${intern.getRole()}</h6>
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">ID: ${intern.getId()}</li>
-              <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-              <li class="list-group-item">School: ${intern.getSchool()}</li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </div>`
-    };
-
-    const htmlPage = [];
-
-    htmlPage.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
-    );
-    htmlPage.push(team
-        .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
-        .join("")
-    );
-    htmlPage.push(team
-        .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
-        .join("")
-    );
-
-    return htmlPage.join("");
-}
+      </div>
         </div>
         </div>
         </div>
