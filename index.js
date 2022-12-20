@@ -12,7 +12,6 @@ const distPath = path.join(DIST_DIR, 'team.html');
 const teamMembers = [];
 const employeeIds = [];
 
-function runApp () {
     function addManager() {
         inquirer
           .prompt([
@@ -33,7 +32,7 @@ function runApp () {
               name: "managerID",
               message: "Please enter the team manager's employee ID.",
               validate: (value) => {
-                if (typeof value === number) {
+                if (typeof value === "number") {
                     return true;
                 } else {
                     return "The employee's ID number needs to be greater than 0."
@@ -235,10 +234,9 @@ function runApp () {
             createTeam();
           });
     }
-
+  
     function makeTeam() {
         fs.writeFile(distPath, generateHTML(teamMembers), 'utf-8');
     }
-}
 
-runApp();
+addManager();

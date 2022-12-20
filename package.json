@@ -1,11 +1,28 @@
 {
+  "name": "team-profile-generator10",
+  "version": "1.0.0",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexisbenavidez99/Team-Profile-Generator10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexisbenavidez99/Team-Profile-Generator10/issues"
+  },
+  "homepage": "https://github.com/alexisbenavidez99/Team-Profile-Generator10#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
   },
   "devDependencies": {
     "jest": "^29.3.1"
-  },
-  "scripts": {
-    "test": "jest"
   }
 }
