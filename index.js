@@ -32,10 +32,11 @@ const employeeIds = [];
               name: "managerID",
               message: "Please enter the team manager's employee ID.",
               validate: (value) => {
-                if (typeof value === "number") {
-                    return true;
+                const parsedVal = parseInt(value)
+                if (isNaN(parsedVal)) {
+                  return "The employee's ID number needs to be greater than 0."
                 } else {
-                    return "The employee's ID number needs to be greater than 0."
+                  return true;
                 }
               },
             },
@@ -56,10 +57,11 @@ const employeeIds = [];
               name: "managerOfficeNum",
               message: "Please enter the team manager's office number.",
               validate: (value) => {
-                if (typeof value === number) {
-                    return true;
+                const parsedVal = parseInt(value)
+                if (isNaN(parsedVal)) {
+                  return "The employee's ID number needs to be greater than 0."
                 } else {
-                    return "The employee's office number needs to be greater than 0."
+                  return true;
                 }
               },
             },
@@ -100,14 +102,14 @@ const employeeIds = [];
                   addIntern();
                   break;
                 default:
-                  buildTeam();
+                  makeTeam();
             }
           });
     }
 
     function addEngineer() {
         inquirer
-        prompt([
+        .prompt([
             {
               type: "input",
               name: "engineerName",
@@ -125,10 +127,11 @@ const employeeIds = [];
               name: "engineerID",
               message: "Please enter your engineer's employee ID.",
               validate: (value) => {
-                if (typeof value === number) {
-                    return true;
+                const parsedVal = parseInt(value)
+                if (isNaN(parsedVal)) {
+                  return "The employee's ID number needs to be greater than 0."
                 } else {
-                    return "The employee's ID number needs to be greater than 0."
+                  return true;
                 }
               },
             },
@@ -190,10 +193,11 @@ const employeeIds = [];
               name: "internID",
               message: "Please enter your intern's ID.",
               validate: (value) => {
-                if (typeof value === number) {
-                    return true;
+                const parsedVal = parseInt(value)
+                if (isNaN(parsedVal)) {
+                  return "The employee's ID number needs to be greater than 0."
                 } else {
-                    return "The employee's ID number needs to be greater than 0."
+                  return true;
                 }
               }
             },
@@ -236,7 +240,7 @@ const employeeIds = [];
     }
   
     function makeTeam() {
-        fs.writeFile(distPath, generateHTML(teamMembers), 'utf-8');
+        fs.writeFileSync(distPath, generateHTML(teamMembers), 'utf-8');
     }
 
 addManager();
