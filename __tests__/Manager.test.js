@@ -1,9 +1,9 @@
 const Manager = require('../lib/Manager');
 
 test('Allows office number to be set and return', () => {
-    const office = 2;
-    const e = new Manager('Alexis', 1, 'test@test.com', office);
-    expect(e.office).toBe(office);
+    const officeNumber = 123;
+    const e = new Manager('Alexis', 1, 'test@test.com', officeNumber);
+    expect(e.officeNumber).toBe(officeNumber);
 });
 
 test('Allows getRole() to return "Manager"', () => {
@@ -13,7 +13,7 @@ test('Allows getRole() to return "Manager"', () => {
 });
 
 test('Allows getOfficeNumber() to return office number', () => {
-    const office = 2;
-    const e = new Manager('Alexis', 1, 'test@test@gmail.com', office);
-    expect(e.getOfficeNumber()).toBe(office);
+    const officeNumber = 123;
+    const e = new Manager('Alexis', 1, 'test@test.com', officeNumber);
+    expect(e.getOfficeNumber()).toBe(officeNumber);
 });
