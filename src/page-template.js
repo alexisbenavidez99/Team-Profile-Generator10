@@ -1,6 +1,6 @@
-const generateTeam = team => {
+const renderTeamPage = teamInfo => {
 
-    const generateManager = manager => {
+    const renderManagerInfo = manager => {
         return `
         <div class="employee-card">
         <div class="card" style="width: 20rem;">
@@ -19,7 +19,7 @@ const generateTeam = team => {
       </div>`
     };
 
-    const generateEngineer = engineer => {
+    const renderEngineerInfo = engineer => {
         return `
         <div class="employee-card">
         <div class="card" style="width: 20rem;">
@@ -38,7 +38,7 @@ const generateTeam = team => {
       </div>`
     };
 
-    const generateIntern = intern => {
+    const renderInternInfo = intern => {
         return `
         <div class="employee-card">
         <div class="card" style="width: 20rem;">
@@ -59,25 +59,16 @@ const generateTeam = team => {
 
     const htmlPage = [];
 
-    htmlPage.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
-    );
-    htmlPage.push(team
-        .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
-        .join("")
-    );
-    htmlPage.push(team
-        .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
-        .join("")
-    );
+    htmlPage.push(teamInfo.filter(employee => employee.getRole() === "Manager").map(manager => renderManagerInfo(manager)));
+
+    htmlPage.push(teamInfo.filter(employee => employee.getRole() === "Engineer").map(engineer => renderEngineerInfo(engineer)).join(""));
+
+    htmlPage.push(teamInfo.filter(employee => employee.getRole() === "Intern").map(intern => renderInternInfo(intern)).join(""));
 
     return htmlPage.join("");
 }
 
-module.exports = team => {
+module.exports = teamInfo => {
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -97,7 +88,7 @@ module.exports = team => {
         <div class="container">
         <div class="row">
         <div class="team-area col-12 d-flex justify-content-center">
-        ${generateTeam(team)}
+        ${renderTeamPage(teamInfo)}
         </div>
         </div>
         </div>

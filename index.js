@@ -111,24 +111,24 @@ const employeeIds = [];
         .prompt([
             {
               type: "input",
-              name: "engineerName",
               message: "Please enter your engineer's name.",
+              name: "engineerName",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter at least one character."
+                    return "Enter at least one character."
                 }
               },
             },
             {
               type: "input",
-              name: "engineerID",
               message: "Please enter your engineer's employee ID.",
+              name: "engineerID",
               validate: (value) => {
                 const parsedVal = parseInt(value)
                 if (isNaN(parsedVal)) {
-                  return "The employee's ID number needs to be greater than 0."
+                  return "Enter at least one character."
                 } else {
                   return true;
                 }
@@ -136,25 +136,25 @@ const employeeIds = [];
             },
             {
               type: "input",
-              name: "engineerEmail",
               message: "Please enter your engineer's email.",
+              name: "engineerEmail",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter a valid email address."
+                    return "Enter at least one character."
                 }
               },
             },
             {
               type: "input",
-              name: "engineerGithub",
               message: "Please enter your engineer's GitHub username.",
+              name: "engineerGithub",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter at least one character."
+                    return "Enter at least one character."
                 }
               }
             }
@@ -168,7 +168,7 @@ const employeeIds = [];
             );
             teamMembers.push(engineer);
             employeeIds.push(value.enginerID);
-            createTeam();
+            formTeamMembers();
           });
     }
 
@@ -177,24 +177,24 @@ const employeeIds = [];
           .prompt([
             {
               type: "input",
-              name: "internName",
               message: "Please enter your intern's name.",
+              name: "internName",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter at least one character."
+                    return "Enter at least one character."
                 }
               }
             },
             {
               type: "input",
-              name: "internID",
               message: "Please enter your intern's ID.",
+              name: "internID",
               validate: (value) => {
                 const parsedVal = parseInt(value)
                 if (isNaN(parsedVal)) {
-                  return "The employee's ID number needs to be greater than 0."
+                  return "Enter at least one character."
                 } else {
                   return true;
                 }
@@ -202,25 +202,25 @@ const employeeIds = [];
             },
             {
               type: "input",
-              name: "internEmail",
               message: "Please enter your intern's email address.",
+              name: "internEmail",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter a valid email address."
+                    return "Enter at least one character"
                 }
               }
             },
             {
               type: "input",
-              name: "internSchool",
               message: "Please enter your intern's school name.",
+              name: "internSchool",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter at least one character."
+                    return "Enter at least one character."
                 }
               }
             }
@@ -234,7 +234,7 @@ const employeeIds = [];
             );
             teamMembers.push(intern);
             employeeIds.push(value.internID);
-            createTeam();
+            formTeamMembers();
           });
     }
   
