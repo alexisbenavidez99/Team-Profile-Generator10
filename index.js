@@ -84,7 +84,7 @@ const employeeIds = [];
           .prompt([
             {
               type: "list",
-              messgae: "Which type of team member would you like to add?",
+              message: "Which type of team member would you like to add?",
               name: "employeeInput",
               choices: [
                 "Intern",

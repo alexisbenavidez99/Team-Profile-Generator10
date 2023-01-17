@@ -34,7 +34,7 @@ A Node.js command-line application that takes in information about employees on 
 
 ## Preview
 
-[Untitled_ Dec 20, 2022 6_53 PM.webm](https://user-images.githubusercontent.com/113260005/208796678-1da880e1-b750-4938-a044-71d5a8c44e71.webm)
+[Untitled_ Jan 16, 2023 9_14 PM.webm](https://user-images.githubusercontent.com/113260005/212801995-65774c75-a3aa-4617-9334-199e4d655acb.webm)
 
 ## License
 
