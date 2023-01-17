@@ -37,7 +37,7 @@ test('Allows getId() to return ID', () => {
 
 test('Allows for getEmail() to return email', () => {
     const email = 'test@email.com';
-    const e = new Employee('Alexis', 1, email);
+    const testExample = new Employee('Alexis', 1, email);
     expect(testExample.getEmail()).toBe(email);
 });
 
