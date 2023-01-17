@@ -17,24 +17,24 @@ const employeeIds = [];
           .prompt([
             {
               type: "input",
-              name: "managerName",
               message: "Please enter team manager's name.",
+              name: "managerName",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter at least one character."
+                    return "Enter at least one character."
                 }
               },
             },
             {
               type: "input",
-              name: "managerID",
               message: "Please enter the team manager's employee ID.",
+              name: "managerID",
               validate: (value) => {
                 const parsedVal = parseInt(value)
                 if (isNaN(parsedVal)) {
-                  return "The employee's ID number needs to be greater than 0."
+                  return "Enter at least one character."
                 } else {
                   return true;
                 }
@@ -42,24 +42,24 @@ const employeeIds = [];
             },
             {
               type: "input",
-              name: "managerEmail",
               message: "Please enter the team manager's email.",
+              name: "managerEmail",
               validate: (value) => {
                 if (value !== '') {
                     return true;
                 } else {
-                    return "Please enter a valid email address."
+                    return "Enter at least one character."
                 }
               },
             },
             {
               type: "input",
-              name: "managerOfficeNum",
               message: "Please enter the team manager's office number.",
+              name: "managerOfficeNum",
               validate: (value) => {
                 const parsedVal = parseInt(value)
                 if (isNaN(parsedVal)) {
-                  return "The employee's ID number needs to be greater than 0."
+                  return "Enter at least one character."
                 } else {
                   return true;
                 }
@@ -75,34 +75,33 @@ const employeeIds = [];
             );
             teamMembers.push(manager);
             employeeIds.push(value.managerID);
-            createTeam();
+            formTeamMembers();
           });
     }
 
-    function createTeam() {
+    function formTeamMembers() {
         inquirer
           .prompt([
             {
               type: "list",
-              name: "employeeChoice",
               messgae: "Which type of team member would you like to add?",
+              name: "employeeInput",
               choices: [
-                "Engineer",
                 "Intern",
-                "I don't want to add anymore employees"
+                "Engineer",
+                "No more employees to add."
               ],
             },
           ])
           .then((userInput) => {
-            switch (userInput.employeeChoice) {
-                case "Engineer":
-                  addEngineer();
-                  break;
-                case "Intern":
-                  addIntern();
-                  break;
-                default:
-                  makeTeam();
+            if (userInput.employeeInput === 'Intern') {
+              addIntern();
+            }
+            else if (userInput.employeeInput === 'Engineer') {
+              addEngineer();
+            }
+            else {
+              makeTeam();
             }
           });
     }
